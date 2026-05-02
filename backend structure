@@ -1,0 +1,51 @@
+# Task Checklist
+- [x] Navigate to OneDrive link and load PDF
+- [x] Extract text content from the PDF
+- [x] Identify API endpoints, data models, and requirements
+- [x] Summarize findings and report back
+
+# Project Summary: SAFORA
+Safora is a crowdsourced travel safety platform designed to help travelers share and receive real-time safety information.
+
+## Core Features
+- User Registration & Login
+- Crowdsourced Safety Reports (Unsafe areas, accidents, road blockages, weather)
+- Interactive Map showing safe/unsafe locations
+- Community interaction (Comments, Ratings)
+- Admin Moderation
+
+## Proposed API Endpoints
+### Authentication
+- `POST /api/auth/register`: Register a new user.
+- `POST /api/auth/login`: Authenticate user and return token.
+
+### Reports
+- `POST /api/reports`: Create a new safety report (requires title, type, description, location).
+- `GET /api/reports`: Fetch all reports (with optional filters for location or type).
+- `GET /api/reports/:id`: Get detailed information about a specific report.
+- `PUT /api/reports/:id`: Update an existing report (reporter only).
+- `DELETE /api/reports/:id`: Remove a report (reporter or admin).
+
+### Community Interaction
+- `POST /api/reports/:id/comments`: Add a comment to a report.
+- `GET /api/reports/:id/comments`: Retrieve comments for a specific report.
+- `POST /api/reports/:id/rate`: Rate a report as helpful or unhelpful.
+
+### Alerts & Routes
+- `GET /api/alerts`: Get real-time alerts for the user's current or specified location.
+- `GET /api/routes/safe`: Get suggestions for safe travel routes based on community data.
+
+### Admin
+- `GET /api/admin/users`: List all registered users.
+- `DELETE /api/admin/users/:id`: Delete a user account.
+- `DELETE /api/admin/reports/:id`: Moderate and remove inappropriate or fake reports.
+
+## Data Models
+### User
+- `name`, `email`, `password`, `role` (user/admin), `createdAt`
+### Report
+- `reporter` (Ref to User), `type` (Enum: Unsafe Area, Road Blockage, Weather, Accident, Tip), `description`, `location` (coordinates), `status`, `createdAt`
+### Comment
+- `report` (Ref to Report), `user` (Ref to User), `content`, `createdAt`
+### Rating
+- `report` (Ref to Report), `user` (Ref to User), `isHelpful` (Boolean), `createdAt`
