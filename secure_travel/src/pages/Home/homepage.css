@@ -1,0 +1,49 @@
+/* Navbar */
+.custom-navbar {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  padding: 15px 0;
+}
+
+.navbar .nav-link {
+  color: #ccc;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #00c6ff;
+}
+
+/* Footer */
+.footer-section {
+  background: #0b1c2c;
+  color: #ccc;
+  padding: 50px 0;
+}
+
+.footer-section h5 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-section a {
+  color: #aaa;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footer-section a:hover {
+  color: #00c6ff;
+}
+
+.social-icons a {
+  font-size: 20px;
+  margin-right: 10px;
+  color: white;
+}
+
+.social-icons a:hover {
+  color: #00c6ff;
+}
