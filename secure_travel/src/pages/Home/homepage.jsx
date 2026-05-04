@@ -6,35 +6,40 @@ export default function HomePage() {
    return(
     <>
     {/* <!-- ═══ NAVBAR ════ --> */}
-<nav class="navbar navbar-expand-lg sf-nav">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-      <div class="brand-box"><i class="bi bi-geo-alt-fill"></i></div>
-      <div>
-        <span class="brand-name">SAFORA</span>
-        <span class="brand-tag">Travel Safe, Travel Smart</span>
-      </div>
-    </a>
-    <button class="navbar-toggler text-white border " data-bs-toggle="collapse"
-    data-bs-target="#sfNav">
-    <i class="bi bi-menu-button-wide"></i>
-    </button>
-     <div class="collapse navbar-collapse" id="sfNav">
-     <div class="navbar-nav">
-     <a href="" class="nav-link text-white active">Home</a>
-     <a href="" class="nav-link text-white">Features</a>
-     <a href="" class="nav-link text-white">Reports</a>
-    <a href="" class="nav-link text-white">Map</a>
-     <a href="" class="nav-link text-white">Community</a>
-    <a href="" class="nav-link text-white">About us</a>
-    </div>
-    </div>
-      <div class="d-flex gap-3 mt-5 ">
-        <button class="btn btn-login mt-2">Login</button>
-        <button class="btn btn-signup">Sign Up</button>
-      </div>
-    </div>
-</nav>
+    <Navbar className="safora-navbar" expand="lg">
+      <Container>
+        <Navbar.Brand href="#" className="safora-brand">
+          <div className="brand-icon">📍</div>
+          <div>
+            SAFORA
+            <span className="brand-sub">Travel Safe, Travel Smart</span>
+          </div>
+        </Navbar.Brand>
+
+        <button class="navbar-toggler text-white border " data-bs-toggle="collapse"
+                    data-bs-target="#navbar">
+                    <i class="bi bi-menu-button-wide"></i>
+                </button>
+
+        <Navbar.Collapse className="collapse navbar-collapse" id="navbar">
+          <Nav className="mx-auto">
+            {['Home', 'Features', 'Reports', 'Map', 'Community', 'About Us'].map((item, i) => (
+              <Nav.Link
+                key={item}
+                href="#"
+                className={`nav-link ${i === 0 ? 'active' : ''}`}
+              >
+                {item}
+              </Nav.Link>
+            ))}
+          </Nav>
+          <div className="d-flex gap-2 mt-2 mt-lg-0">
+            <Button className="btn-login">Login</Button>
+            <Button className="btn-signup">Sign Up</Button>
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
  
 {/* <!-- ═════════ HERO ════════════ --> */}
 <section class="hero">
