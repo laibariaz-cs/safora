@@ -15,20 +15,103 @@
     body { font-family: var(--fb); color: var(--text); overflow-x: hidden; margin: 0; }
  
     /* ─── NAVBAR ─────────────────────────────── */
-    .sf-nav { background: var(--dark) !important; padding: 0.9rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 1px 0 rgba(255,255,255,.06); }
-    .brand-box { width:36px; height:36px; background:var(--blue); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .brand-box i { color:#fff; font-size:1.1rem; }
-    .brand-name  { font-family:'Sora',sans-serif; font-weight:700; font-size:1.05rem; color:#fff; display:block; line-height:1.1; }
-    .brand-tag   { font-size:.65rem; color:rgba(255,255,255,.4); display:block; }
-    .sf-nav .nav-link { color:rgba(255,255,255,.72) !important; font-size:.875rem; font-weight:500; padding:.4rem .8rem !important; transition:color .2s; }
-    .sf-nav .nav-link:hover, .sf-nav .nav-link.active { color:#fff !important; }
-    .sf-nav .nav-link.active { border-bottom:2px solid var(--blue-lt); }
-    .btn-login  { background:transparent !important; border:1.5px solid rgba(255,255,255,.3) !important; color:#fff !important; font-size:.875rem; font-weight:600; padding:.4rem 1.1rem !important; border-radius:8px !important; }
-    .btn-login:hover { border-color:rgba(255,255,255,.7) !important; }
-    .btn-signup { background:var(--blue) !important; border:none !important; color:#fff !important; font-size:.875rem; font-weight:600; padding:.4rem 1.25rem !important; border-radius:8px !important; }
-    .btn-signup:hover { background:var(--blue-lt) !important; }
-    .sf-nav .navbar-toggler { border:0; }
-    .sf-nav .navbar-toggler-icon { filter: invert(1); }
+
+.safora-app {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── NAVBAR ─── */
+.safora-navbar {
+  background: #152035 !important;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.safora-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff !important;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.brand-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.safora-navbar .nav-link {
+  color: rgba(255,255,255,0.75) !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 14px !important;
+  transition: color 0.2s;
+}
+
+.safora-navbar .nav-link:hover,
+.safora-navbar .nav-link.active {
+  color: #fff !important;
+}
+
+.safora-navbar .nav-link.active {
+  border-bottom: 2px solid var(--primary);
+}
+
+.btn-login {
+  border: 1.5px solid rgba(255,255,255,0.3) !important;
+  color: #fff !important;
+  background: transparent !important;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  transition: all 0.2s;
+}
+
+.btn-login:hover {
+  border-color: #fff !important;
+  background: rgba(255,255,255,0.08) !important;
+}
+
+.btn-signup {
+  background: var(--primary) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 8px !important;
+  padding: 8px 22px !important;
+  transition: all 0.2s;
+}
+
+.btn-signup:hover {
+  background: var(--primary-dark) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26,86,240,0.4);
+}
  
     /* ─── HERO ───────────────────────────────── */
     .hero { position:relative; min-height:540px; display:flex; flex-direction:column; overflow:hidden; }
@@ -51,13 +134,4 @@
     .sec-title { font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(1.55rem,3vw,2.15rem); color:var(--text); margin-bottom:.4rem; }
     .sec-sub   { color:var(--muted); font-size:.95rem; }
     
-     /* ─── FOOTER ─────────────────────────────── */
-    .sf-footer { background:var(--dark); color:rgba(255,255,255,.62); }
-    .ftr-heading { color:#fff; font-weight:700; font-size:.8rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:1rem; }
-    .ftr-link { display:block; color:rgba(255,255,255,.52); text-decoration:none; font-size:.85rem; margin-bottom:.5rem; transition:color .2s; }
-    .ftr-link:hover { color:#fff; }
-    .soc-btn { width:36px; height:36px; border-radius:8px; background:rgba(255,255,255,.08); display:inline-flex; align-items:center; justify-content:center; color:rgba(255,255,255,.65); font-size:.9rem; text-decoration:none; border:1px solid rgba(255,255,255,.1); transition:background .2s,color .2s,border-color .2s; }
-    .soc-btn:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
-    .ftr-hr { border-color:rgba(255,255,255,.08); margin:0; }
-    .ftr-copy { font-size:.78rem; color:rgba(255,255,255,.28); }
- 
+    
