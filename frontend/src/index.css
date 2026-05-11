@@ -323,4 +323,4 @@ input,textarea,select{font-family:var(--font-body)}
   .type-selector{grid-template-columns:repeat(2,1fr)}
   .admin-table-header,.admin-table-row{grid-template-columns:2fr 1fr 1fr}
   .admin-table-header span:nth-child(n+4),.admin-table-row span:nth-child(n+4){display:none}
-}
+}                                                     
